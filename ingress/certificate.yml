@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: my-tls-certificate
+  namespace: default
+spec:
+  secretName: tls-secret   # This is the Kubernetes secret where the certificate will be stored
+  issuerRef:
+    name: letsencrypt-prod  # This is the issuer you created earlier
+    kind: ClusterIssuer
+  commonName: faces.com   # The domain for which the certificate is requested (you can use a placeholder)
+            # The DNS names covered by the certificate
+
